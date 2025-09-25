@@ -1,4 +1,5 @@
 import http from 'k6/http';
+import {sleep} from 'k6';
 
 export const options = {
     stages: [
@@ -15,4 +16,5 @@ export const options = {
 //Uploads an image
 export default function(){
     http.post('https://petstore.swagger.io/#/pet/uploadFile');
+    sleep(1);
 }
