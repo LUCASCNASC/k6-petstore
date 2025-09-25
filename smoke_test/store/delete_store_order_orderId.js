@@ -5,7 +5,7 @@ export const options = {
     duration: '1m'
 }
 
-//Finds Pets by status
+//Delete purchase order by ID
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+    http.delete('https://petstore.swagger.io/#/store/deleteOrder');
 }

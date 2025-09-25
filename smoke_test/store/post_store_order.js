@@ -5,7 +5,7 @@ export const options = {
     duration: '1m'
 }
 
-//Finds Pets by status
+//Places an order for a pet
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+    http.post('https://petstore.swagger.io/#/store/placeOrder');
 }

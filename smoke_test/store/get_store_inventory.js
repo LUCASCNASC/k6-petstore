@@ -5,7 +5,7 @@ export const options = {
     duration: '1m'
 }
 
-//Finds Pets by status
+//Returns pet inventories by status
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+    http.get('https://petstore.swagger.io/#/store/getInventory');
 }

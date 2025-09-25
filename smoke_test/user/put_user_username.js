@@ -5,7 +5,7 @@ export const options = {
     duration: '1m'
 }
 
-//Finds Pets by status
+//Updated user
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+    http.put('https://petstore.swagger.io/#/user/updateUser');
 }

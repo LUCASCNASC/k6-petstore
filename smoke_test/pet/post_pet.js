@@ -5,6 +5,7 @@ export const options = {
     duration: '1m'
 }
 
+//Add a new pet to the store
 export default function(){
     http.post('https://petstore.swagger.io/#/pet/addPet');
 }

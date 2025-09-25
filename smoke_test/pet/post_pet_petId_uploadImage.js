@@ -5,6 +5,7 @@ export const options = {
     duration: '1m'
 }
 
+//Uploads an image
 export default function(){
     http.post('https://petstore.swagger.io/#/pet/uploadFile');
 }

@@ -5,7 +5,7 @@ export const options = {
     duration: '1m'
 }
 
-//Finds Pets by status
+//Updates a pet in the store with form data
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+    http.post('https://petstore.swagger.io/#/pet/updatePetWithForm');
 }
