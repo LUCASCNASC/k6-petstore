@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import {sleep} from 'k6';
+import {sleep, check} from 'k6';
 
 export const options = {
     stages: [
@@ -17,4 +17,7 @@ export const options = {
 export default function(){
     http.post('https://petstore.swagger.io/#/pet/addPet');
     sleep(1);
+    check(res, {
+        'status code é 200': (r) => r.status === 200
+    });
 }

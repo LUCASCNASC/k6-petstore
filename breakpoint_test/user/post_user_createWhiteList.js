@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import {sleep} from 'k6';
+import {sleep, check} from 'k6';
 
 export const options = {
     executor: 'ramping-arrival-rate',
@@ -12,4 +12,7 @@ export const options = {
 export default function(){
     http.post('https://petstore.swagger.io/#/user/createUsersWithListInput');
     sleep(1);
+    check(res, {
+        'status code é 200': (r) => r.status === 200
+    });
 }
