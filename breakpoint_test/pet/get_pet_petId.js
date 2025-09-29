@@ -14,16 +14,29 @@ export const options = {
     executor: 'ramping-arrival-rate',
     stages: [
         { duration: '2h', target: 20000 }
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
-//Find pet by ID
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/getPetById');
-    sleep(1);
-    check(res, {
-        'status code é 200': (r) => r.status === 200
+    group('requisição todos', function(){
+        const response1 = http.get('https://petstore.swagger.io/#/pet/getPetById');
+        sleep(1);
+        check(response1, {
+            'status code 200 get all': (r) => r.status === 200
+        });
     });
+   
+    group('requisição por id', function(){
+        const response2 = http.get('https://petstore.swagger.io/#/pet/getPetById/1');
+        sleep(1);
+        check(response2, {
+            'status code 200 get id': (r) => r.status === 200
+        }); 
+    });
+
     //contador
     chamadas.add(1);
     //medidor
