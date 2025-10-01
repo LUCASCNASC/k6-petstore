@@ -14,7 +14,10 @@ export const options = {
     executor: 'ramping-arrival-rate',
     stages: [
         { duration: '2h', target: 20000 }
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Finds purchase order by ID
@@ -24,6 +27,33 @@ export default function(){
     check(res, {
         'status code é 200': (r) => r.status === 200
     });
+    //contador
+    chamadas.add(1);
+    //medidor
+    myGauge.add(req.timings.blocked);
+    //taxa
+    myRate.add(req.status === 200);
+    //tendencia
+    myTrend.add(req.timings.waiting);
+}
+
+export default function(){
+    group('requisição todos', function(){
+        const response1 = http.get('https://petstore.swagger.io/#/store/getOrderById');
+        sleep(1);
+        check(response1, {
+            'status code 200 get all': (r) => r.status === 200
+        });
+    });
+   
+    group('requisição por id', function(){
+        const response2 = http.get('https://petstore.swagger.io/#/store/getOrderById/1');
+        sleep(1);
+        check(response2, {
+            'status code 200 get id': (r) => r.status === 200
+        }); 
+    });
+
     //contador
     chamadas.add(1);
     //medidor

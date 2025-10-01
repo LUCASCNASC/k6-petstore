@@ -15,15 +15,28 @@ export const options = {
         { duration: '5m', target: 100 }, // Ramp-up to 400 users over 5 minutes
         { duration: '10m', target: 100 },  // Stay at 400 users for 10 minutes
         { duration: '5m', target: 0 }
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Finds Pets by status
 export default function(){
-    http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
-    sleep(1);
-    check(res, {
-        'status code é 200': (r) => r.status === 200
+    group('requisição todos', function(){
+        const response1 = http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
+        sleep(1);
+        check(response1, {
+            'status code 200 get all': (r) => r.status === 200
+        });
+    });
+   
+    group('requisição por id', function(){
+        const response2 = http.get('https://petstore.swagger.io/#/pet/findPetsByStatus/1');
+        sleep(1);
+        check(response2, {
+            'status code 200 get id': (r) => r.status === 200
+        }); 
     });
     //contador
     chamadas.add(1);
