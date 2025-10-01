@@ -12,7 +12,10 @@ const myTrend = new Trend('taxa de espera');
 
 export const options = {
     vus: 1,
-    duration: '1m'
+    duration: '1m',
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Uploads an image

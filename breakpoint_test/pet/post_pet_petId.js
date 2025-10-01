@@ -14,7 +14,10 @@ export const options = {
     executor: 'ramping-arrival-rate',
     stages: [
         { duration: '2h', target: 20000 }
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Updates a pet in the store with form data

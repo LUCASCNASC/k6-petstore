@@ -15,7 +15,10 @@ export const options = {
         { duration: '5m', target: 100 }, // Ramp-up to 400 users over 5 minutes
         { duration: '10m', target: 100 },  // Stay at 400 users for 10 minutes
         { duration: '5m', target: 0 }
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Update an existing pet

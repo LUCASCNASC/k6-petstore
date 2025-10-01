@@ -19,7 +19,10 @@ export const options = {
         { duration: '10s', target: 100 },  // Stay at 50 users for 1 minute
         { duration: '3m', target: 100 },   // Ramp-down to 0 users over 30 seconds   
         { duration: '10s', target: 0 }   // Ramp-down to 0 users over 30 seconds
-    ]
+    ],
+    thresholds: {
+        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
+    }
 }
 
 //Uploads an image
