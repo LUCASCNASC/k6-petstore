@@ -27,10 +27,20 @@ export const options = {
 
 //Delete user
 export default function(){
-    http.delete('https://petstore.swagger.io/#/user/deleteUser');
-    sleep(1);
-    check(res, {
-        'status code é 200': (r) => r.status === 200
+    group('requisição todos', function(){
+        const response1 = http.get('https://petstore.swagger.io/#/user/deleteUser');
+        sleep(1);
+        check(response1, {
+            'status code 200 get all': (r) => r.status === 200
+        });
+    });
+       
+    group('requisição por id', function(){
+        const response2 = http.get('https://petstore.swagger.io/#/user/deleteUser/1');
+        sleep(1);
+        check(response2, {
+            'status code 200 get id': (r) => r.status === 200
+        }); 
     });
     //contador
     chamadas.add(1);
