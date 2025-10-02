@@ -1,10 +1,7 @@
 import http from 'k6/http'; 
 import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
-import { Counter} from 'k6/metrics';
-import { Gauge } from 'k6/metrics';
-import { Rate } from 'k6/metrics';
-import { Trend } from 'k6/metrics'; 
+import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
@@ -21,26 +18,9 @@ export const options = {
     }
 }
 
-//Finds purchase order by ID
-export default function(){
-    http.get('https://petstore.swagger.io/#/store/getOrderById');
-    sleep(1);
-    check(res, {
-        'status code é 200': (r) => r.status === 200
-    });
-    //contador
-    chamadas.add(1);
-    //medidor
-    myGauge.add(req.timings.blocked);
-    //taxa
-    myRate.add(req.status === 200);
-    //tendencia
-    myTrend.add(req.timings.waiting);
-}
-
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.get('https://petstore.swagger.io/#/store/getOrderById');
+        const response1 = http.get(`${BASE_URL}/store/getOrderById`);
         sleep(1);
         check(response1, {
             'status code 200 get all': (r) => r.status === 200
@@ -48,7 +28,7 @@ export default function(){
     });
    
     group('requisição por id', function(){
-        const response2 = http.get('https://petstore.swagger.io/#/store/getOrderById/1');
+        const response2 = http.get(`${BASE_URL}/store/getOrderById/1`);
         sleep(1);
         check(response2, {
             'status code 200 get id': (r) => r.status === 200

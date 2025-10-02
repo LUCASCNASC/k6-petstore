@@ -1,10 +1,7 @@
 import http from 'k6/http'; 
 import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
-import { Counter} from 'k6/metrics';
-import { Gauge } from 'k6/metrics';
-import { Rate } from 'k6/metrics';
-import { Trend } from 'k6/metrics'; 
+import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
@@ -24,7 +21,7 @@ export const options = {
 
 //Updates a pet in the store with form data
 export default function(){
-    http.post('https://petstore.swagger.io/#/pet/updatePetWithForm');
+    http.post(`${BASE_URL}/pet/updatePetWithForm`);
     sleep(1);
     check(res, {
         'status code é 200': (r) => r.status === 200
