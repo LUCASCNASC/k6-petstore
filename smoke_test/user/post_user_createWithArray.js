@@ -1,10 +1,7 @@
 import http from 'k6/http'; 
 import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
-import { Counter} from 'k6/metrics';
-import { Gauge } from 'k6/metrics';
-import { Rate } from 'k6/metrics';
-import { Trend } from 'k6/metrics'; 
+import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
@@ -21,7 +18,7 @@ export const options = {
 
 //Creates list of users with given input array
 export default function(){
-    http.post('https://petstore.swagger.io/#/user/createUsersWithArrayInput');
+    http.post(`${BASE_URL}/user/createUsersWithArrayInput`);
     sleep(1);
     check(res, {
         'status code é 200': (r) => r.status === 200

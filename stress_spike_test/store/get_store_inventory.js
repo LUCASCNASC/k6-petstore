@@ -1,10 +1,7 @@
 import http from 'k6/http'; 
 import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
-import { Counter} from 'k6/metrics';
-import { Gauge } from 'k6/metrics';
-import { Rate } from 'k6/metrics';
-import { Trend } from 'k6/metrics'; 
+import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
@@ -29,7 +26,7 @@ export const options = {
 //Returns pet inventories by status
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.get('https://petstore.swagger.io/#/store/getInventory');
+        const response1 = http.get(`${BASE_URL}/store/getInventory`);
         sleep(1);
         check(response1, {
             'status code 200 get all': (r) => r.status === 200
@@ -37,7 +34,7 @@ export default function(){
     });
    
     group('requisição por id', function(){
-        const response2 = http.get('https://petstore.swagger.io/#/store/getInventory/1');
+        const response2 = http.get(`${BASE_URL}/store/getInventory/1`);
         sleep(1);
         check(response2, {
             'status code 200 get id': (r) => r.status === 200
