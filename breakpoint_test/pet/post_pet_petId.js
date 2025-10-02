@@ -1,4 +1,5 @@
-import http from 'k6/http';
+import http from 'k6/http'; 
+import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
 import { Counter} from 'k6/metrics';
 import { Gauge } from 'k6/metrics';
@@ -8,7 +9,8 @@ import { Trend } from 'k6/metrics';
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
 const myRate = new Rate('taxa req 200');
-const myTrend = new Trend('taxa de espera');
+const myTrend = new Trend('taxa de espera'); 
+import { BASE_URL } from '../../config';
 
 export const options = {
     executor: 'ramping-arrival-rate',

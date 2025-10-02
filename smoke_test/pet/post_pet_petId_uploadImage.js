@@ -1,4 +1,5 @@
-import http from 'k6/http';
+import http from 'k6/http'; 
+import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
 import { Counter} from 'k6/metrics';
 import { Gauge } from 'k6/metrics';
