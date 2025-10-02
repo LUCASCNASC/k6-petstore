@@ -3,6 +3,7 @@ import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
 import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
+const PATH_URL = '/store/deleteOrder/';
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
 const myRate = new Rate('taxa req 200');
@@ -19,7 +20,7 @@ export const options = {
 //Finds purchase order by ID
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.get(`${BASE_URL}/store/getOrderById`);
+        const response1 = http.get(`${BASE_URL}/${PATH_URL}`);
         sleep(1);
         check(response1, {
             'status code 200 get all': (r) => r.status === 200
@@ -27,7 +28,7 @@ export default function(){
     });
    
     group('requisição por id', function(){
-        const response2 = http.get(`${BASE_URL}/store/getOrderById/1`);
+        const response2 = http.get(`${BASE_URL}/${PATH_URL}/1`);
         sleep(1);
         check(response2, {
             'status code 200 get id': (r) => r.status === 200

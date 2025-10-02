@@ -3,6 +3,7 @@ import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
 import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
+const PATH_URL = '/store/deleteOrder/';
 const chamadas = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
 const myRate = new Rate('taxa req 200');
@@ -25,7 +26,7 @@ export const options = {
 
 //Add a new pet to the store
 export default function(){
-    http.post(`${BASE_URL}/pet/addPet`);
+    http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(1);
     check(res, {
         'status code é 200': (r) => r.status === 200
