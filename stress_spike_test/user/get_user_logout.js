@@ -4,7 +4,7 @@ import { sleep, check } from 'k6';
 import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const PATH_URL = '/store/deleteOrder/';
-const chamadas = new Counter('quantidade de chamadas');
+const myCounter = new Counter('quantidade de chamadas');
 const myGauge = new Gauge('Tempo bloqueado');
 const myRate = new Rate('taxa req 200');
 const myTrend = new Trend('taxa de espera');
@@ -44,7 +44,7 @@ export default function(){
 
 
     //contador
-    chamadas.add(1);
+    myCounter.add(1);
     //medidor
     myGauge.add(req.timings.blocked);
     //taxa
