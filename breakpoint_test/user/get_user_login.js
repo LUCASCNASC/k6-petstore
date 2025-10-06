@@ -36,12 +36,9 @@ export default function(){
             'status code 200 get id': (r) => r.status === 200
         }); 
     });
-    //contador
+    
     myCounter.add(1);
-    //medidor
     myGauge.add(req.timings.blocked);
-    //taxa
     myRate.add(req.status === 200);
-    //tendencia
     myTrend.add(req.timings.waiting);
 }
