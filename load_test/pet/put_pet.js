@@ -24,7 +24,7 @@ export const options = {
 export default function(){
     group('requisição todos', function(){
         const response1 = http.get(`${BASE_URL}/${PATH_URL}`);
-        sleep(1);
+        sleep(0.5);
         check(response1, {
             'status code 200 get all': (r) => r.status === 200
         });
@@ -32,7 +32,7 @@ export default function(){
 
     group('requisição por id', function(){
         const response2 = http.get(`${BASE_URL}/${PATH_URL}/1`);
-        sleep(1);
+        sleep(0.5);
         check(response2, {
             'status code 200 get id': (r) => r.status === 200
         }); 

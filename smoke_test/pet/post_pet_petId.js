@@ -25,7 +25,7 @@ export default function(){
         'status code é 200': (r) => r.status === 200
     });
 
-    myCounter.add(1);
+    myCounter.add(0.5);
     myGauge.add(req.timings.blocked);
     myRate.add(req.status === 200);
     myTrend.add(req.timings.waiting);

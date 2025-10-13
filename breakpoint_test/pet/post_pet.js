@@ -22,7 +22,7 @@ export const options = {
 //Add a new pet to the store
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
-    sleep(1);
+    sleep(0.5);
     check(res, {
         'status code é 200': (r) => r.status === 200
     });

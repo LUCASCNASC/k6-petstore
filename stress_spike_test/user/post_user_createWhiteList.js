@@ -27,7 +27,7 @@ export const options = {
 //Creates list of users with given input array
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
-    sleep(1);
+    sleep(0.5);
     check(res, {
         'status code é 200': (r) => r.status === 200
     });
