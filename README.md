@@ -82,13 +82,11 @@ k6-petstore/
 ## 🤝 Contribuição
 
 Sinta-se à vontade para abrir issues ou pull requests com melhorias, sugestões de cenários de teste ou correções!
-
 ---
 
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ---
 
 ## ✉️ Contato
