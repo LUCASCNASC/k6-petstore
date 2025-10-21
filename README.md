@@ -1,7 +1,6 @@
 # 🐾 k6-petstore
 
 Este repositório contém testes de performance para APIs do tipo **Petstore** utilizando o [k6](https://k6.io/), uma poderosa ferramenta de código aberto para testes de carga e performance.
-
 ---
 
 ## 🚀 Sobre o projeto
@@ -12,7 +11,6 @@ Os testes são escritos em **JavaScript** e visam:
 - Avaliar o tempo de resposta das principais rotas;
 - Identificar gargalos e limites de throughput;
 - Garantir que a API se mantém estável sob diferentes cargas de usuários.
-
 ---
 
 ## 📦 Estrutura do projeto
@@ -28,7 +26,6 @@ k6-petstore/
 ├── README.md
 └── package.json      # Dependências (se necessário)
 ```
-
 ---
 
 ## ⚙️ Como executar os testes
@@ -42,18 +39,15 @@ k6-petstore/
    git clone https://github.com/LUCASCNASC/k6-petstore.git
    cd k6-petstore
    ```
-
 3. **Execute um teste básico:**
    ```bash
    k6 run scripts/petstore.js
    ```
-
 4. **Parâmetros adicionais:**
    - Para rodar testes com diferentes quantidades de usuários virtuais (VU) e duração:
      ```bash
      k6 run --vus 50 --duration 2m scripts/petstore.js
      ```
-
 ---
 
 ## 📊 Relatórios
@@ -64,7 +58,6 @@ k6-petstore/
   k6 run scripts/petstore.js --out json=results/result.json
   # Depois, use ferramentas como k6-reporter para transformar em HTML.
   ```
-
 ---
 
 ## 🛠️ Principais rotas testadas
@@ -76,7 +69,6 @@ k6-petstore/
 - `DELETE /pet/{petId}`
 
 *(Adapte conforme as rotas presentes no seu script!)*
-
 ---
 
 ## 🤝 Contribuição
@@ -93,7 +85,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 [![Linkedin](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/lucascamargo-qa/)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/LUCASCNASC)
-
 ---
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
