@@ -88,3 +88,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
+
+- It's necessary to update packages.
