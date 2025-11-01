@@ -17,7 +17,6 @@ export const options = {
     }
 }
 
-//Find pet by ID
 export default function(){
     group('requisição todos', function(){
         const response1 = http.get(`${BASE_URL}/${PATH_URL}`);

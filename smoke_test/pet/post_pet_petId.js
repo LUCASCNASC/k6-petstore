@@ -17,7 +17,6 @@ export const options = {
     }
 }
 
-//Updates a pet in the store with form data
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(1);

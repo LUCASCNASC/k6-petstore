@@ -20,7 +20,6 @@ export const options = {
     }
 }
 
-//Logs out currente logged in user session
 export default function(){
     group('requisição todos', function(){
         const response1 = http.get(`${BASE_URL}/${PATH_URL}`);
