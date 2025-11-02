@@ -24,7 +24,6 @@ export const options = {
     }
 }
 
-//Update an existing pet
 export default function(){
     group('requisição todos', function(){
         const response1 = http.get(`${BASE_URL}/${PATH_URL}`);

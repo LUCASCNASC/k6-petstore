@@ -19,7 +19,6 @@ export const options = {
     }
 }
 
-//Logs user into the system
 export default function(){
     group('requisição todos', function(){
         const response1 = http.get(`${BASE_URL}/${PATH_URL}`);

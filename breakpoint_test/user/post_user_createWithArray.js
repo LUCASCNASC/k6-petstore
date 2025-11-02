@@ -19,7 +19,6 @@ export const options = {
     }
 }
 
-//Creates list of users with given input array
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(0.5);

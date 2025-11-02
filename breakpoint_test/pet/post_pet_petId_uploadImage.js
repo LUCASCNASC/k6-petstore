@@ -19,7 +19,6 @@ export const options = {
     }
 }
 
-//Uploads an image
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(0.5);

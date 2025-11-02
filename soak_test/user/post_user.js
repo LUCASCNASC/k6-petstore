@@ -20,7 +20,6 @@ export const options = {
     }
 }
 
-//Create user
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(0.5);

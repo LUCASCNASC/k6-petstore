@@ -24,7 +24,6 @@ export const options = {
     }
 }
 
-//Add a new pet to the store
 export default function(){
     http.post(`${BASE_URL}/${PATH_URL}`);
     sleep(0.5);
