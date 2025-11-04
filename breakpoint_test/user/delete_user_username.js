@@ -1,6 +1,5 @@
 import http from 'k6/http';
 import { sleep, check } from 'k6'; 
-import { BASE_URL } from '../../config';
 import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
 const PATH_URL = '/user/deleteUser/';
@@ -21,7 +20,7 @@ export const options = {
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.delete(`${BASE_URL}/${PATH_URL}`);
+        const response1 = http.delete(`${process.env.BASE_URL}/${PATH_URL}`);
         sleep(0.5);
         check(response1, {
             'status code 200 delete all': (r) => r.status === 200
@@ -29,7 +28,7 @@ export default function(){
     });
    
     group('requisição por id', function(){
-        const response2 = http.delete(`${BASE_URL}/${PATH_URL}/1`);
+        const response2 = http.delete(`${process.env.BASE_URL}/${PATH_URL}/1`);
         sleep(0.5);
         check(response2, {
             'status code 200 delete id': (r) => r.status === 200

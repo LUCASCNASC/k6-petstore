@@ -89,7 +89,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
 
-- It's necessary to update packages.
-- It's necessary to improve files.
-
-Aperfeiçoar projeto.
+Ajustar as BASE_URL para "process.env.BASE_URL" em todos os arquivos de teste, e excluir caminho para arquivo config.js
+Feito em:
+breakpoint_test
