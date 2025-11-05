@@ -92,3 +92,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 Ajustar as BASE_URL para "process.env.BASE_URL" em todos os arquivos de teste, e excluir caminho para arquivo config.js
 Feito em:
 breakpoint_test
+load_test
