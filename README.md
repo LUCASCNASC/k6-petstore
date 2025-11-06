@@ -93,3 +93,4 @@ Ajustar as BASE_URL para "process.env.BASE_URL" em todos os arquivos de teste, e
 Feito em:
 breakpoint_test
 load_test
+smoke_test

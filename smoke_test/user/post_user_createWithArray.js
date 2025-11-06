@@ -1,5 +1,4 @@
 import http from 'k6/http'; 
-import { BASE_URL } from '../../config';
 import { sleep, check } from 'k6';
 import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
 
@@ -18,7 +17,7 @@ export const options = {
 }
 
 export default function(){
-    http.post(`${BASE_URL}/${PATH_URL}`);
+    http.post(`${process.env.BASE_URL}/${PATH_URL}`);
     sleep(0.5);
     check(res, {
         'status code é 200': (r) => r.status === 200
