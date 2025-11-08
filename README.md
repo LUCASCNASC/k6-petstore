@@ -94,3 +94,4 @@ Feito em:
 breakpoint_test
 load_test
 smoke_test
+soak_test
