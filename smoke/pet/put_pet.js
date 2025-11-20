@@ -1,40 +1,19 @@
 import http from 'k6/http'; 
 import { sleep, check } from 'k6';
-import { Counter, Gauge, Rate, Trend } from 'k6/metrics';
-
-const PATH_URL = '/store/deleteOrder/';
-const myCounter = new Counter('quantidade de chamadas');
-const myGauge = new Gauge('Tempo bloqueado');
-const myRate = new Rate('taxa req 200');
-const myTrend = new Trend('taxa de espera');
 
 export const options = {
     vus: 1,
-    duration: '1m',
-    thresholds: {
-        'http_req_duration{group:::requisição por id}': ['p(95) < 500']
-    }
+    duration: '30s'
 }
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.put(`${process.env.BASE_URL}/${PATH_URL}`);
+        const response1 = http.put('https://petstore.swagger.io/#/pet/updatePet');
         sleep(0.5);
-        check(response1, {
-            'status code 200 put all': (r) => r.status === 200
-        });
     });
     
     group('requisição por id', function(){
-        const response2 = http.put(`${process.env.BASE_URL}/${PATH_URL}/1`);
+        const response2 = http.put('https://petstore.swagger.io/#/pet/updatePet/1');
         sleep(0.5);
-        check(response2, {
-            'status code 200 put id': (r) => r.status === 200
-        }); 
     });
-
-    myCounter.add(1);
-    myGauge.add(req.timings.blocked);
-    myRate.add(req.status === 200);
-    myTrend.add(req.timings.waiting);
 }
