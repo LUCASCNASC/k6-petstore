@@ -89,4 +89,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
 
-Verificar documentação para continuar desenvolvendo projeto.
+Seguir atualizando arquivos de teste.
