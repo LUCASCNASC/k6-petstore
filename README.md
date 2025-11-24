@@ -93,3 +93,4 @@ Seguir atualizando arquivos de teste.
 - smoke
 - load
 - breakpoint
+- soak
