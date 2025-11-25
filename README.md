@@ -94,3 +94,4 @@ Seguir atualizando arquivos de teste.
 - load
 - breakpoint
 - soak
+- stress
