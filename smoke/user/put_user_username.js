@@ -9,11 +9,6 @@ export const options = {
 export default function(){
     group('requisição todos', function(){
         const res = http.put('https://petstore.swagger.io/#/user/updateUser');
-        sleep(0.5);
-    });
-    
-    group('requisição por id', function(){
-        const res = http.put('https://petstore.swagger.io/#/user/updateUser/1');
-        sleep(0.5);
+        sleep(1);
     });
 }

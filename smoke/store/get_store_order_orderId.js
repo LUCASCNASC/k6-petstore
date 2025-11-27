@@ -8,12 +8,7 @@ export const options = {
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.get('https://petstore.swagger.io/#/store/getOrderById');
-        sleep(0.5);
-    });
-    
-    group('requisição por id', function(){
-        const response2 = http.get('https://petstore.swagger.io/#/store/getOrderById/1');
-        sleep(0.5);
+        const res = http.get('https://petstore.swagger.io/#/store/getOrderById');
+        sleep(1);
     });
 }

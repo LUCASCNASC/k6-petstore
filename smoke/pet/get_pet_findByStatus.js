@@ -9,6 +9,6 @@ export const options = {
 export default function(){
     group('requisição todos', function(){
         const res = http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
-        sleep(0.5);
+        sleep(1);
     });
 }

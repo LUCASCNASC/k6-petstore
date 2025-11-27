@@ -9,6 +9,6 @@ export const options = {
 export default function(){
     group('requisição todos', function(){
         const res = http.post('https://petstore.swagger.io/#/store/placeOrder');
-        sleep(0.5);
+        sleep(1);
     });
 }

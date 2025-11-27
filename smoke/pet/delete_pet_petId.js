@@ -8,12 +8,7 @@ export const options = {
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.del('https://petstore.swagger.io/#/pet/deletePet');
-        sleep(0.5);
-    });
-    
-    group('requisição por id', function(){
-        const response2 = http.del('https://petstore.swagger.io/#/pet/deletePet/1');
-        sleep(0.5);
+        const res = http.del('https://petstore.swagger.io/#/pet/deletePet');
+        sleep(1);
     });
 }
