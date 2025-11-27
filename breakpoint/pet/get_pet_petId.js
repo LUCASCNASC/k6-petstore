@@ -11,6 +11,6 @@ export const options = {
 };
 
 export default function () {
-    http.get('https://petstore.swagger.io/#/pet/getPetById');
+    const res = http.get('https://petstore.swagger.io/#/pet/getPetById');
     sleep(1);
 }

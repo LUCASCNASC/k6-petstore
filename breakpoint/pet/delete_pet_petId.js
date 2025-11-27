@@ -11,6 +11,6 @@ export const options = {
 };
 
 export default function () {
-    http.del('https://petstore.swagger.io/#/pet/deletePet');
+    const res = http.del('https://petstore.swagger.io/#/pet/deletePet');
     sleep(1);
 }

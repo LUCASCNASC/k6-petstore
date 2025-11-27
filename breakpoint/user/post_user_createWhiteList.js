@@ -11,6 +11,6 @@ export const options = {
 };
 
 export default function () {
-    http.post('https://petstore.swagger.io/#/user/createUsersWithListInput');
+    const res = http.post('https://petstore.swagger.io/#/user/createUsersWithListInput');
     sleep(1);
 }

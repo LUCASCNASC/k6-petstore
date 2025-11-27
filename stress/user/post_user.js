@@ -19,6 +19,6 @@ export const options = {
 };
 
 export default function () {
-    http.post('https://petstore.swagger.io/#/user/createUser');
+    const res = http.post('https://petstore.swagger.io/#/user/createUser');
     sleep(1);
 }

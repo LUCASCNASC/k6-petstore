@@ -19,6 +19,6 @@ export const options = {
 };
 
 export default function () {
-    http.get('https://petstore.swagger.io/#/user/loginUser');
+    const res = http.get('https://petstore.swagger.io/#/user/loginUser');
     sleep(1);
 }

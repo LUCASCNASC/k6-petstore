@@ -11,6 +11,6 @@ export const options = {
 };
 
 export default function () {
-    http.post('https://petstore.swagger.io/#/pet/uploadFile');
+    const res = http.post('https://petstore.swagger.io/#/pet/uploadFile');
     sleep(1);
 }

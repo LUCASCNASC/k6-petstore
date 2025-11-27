@@ -8,12 +8,12 @@ export const options = {
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.put('https://petstore.swagger.io/#/user/updateUser');
+        const res = http.put('https://petstore.swagger.io/#/user/updateUser');
         sleep(0.5);
     });
     
     group('requisição por id', function(){
-        const response2 = http.put('https://petstore.swagger.io/#/user/updateUser/1');
+        const res = http.put('https://petstore.swagger.io/#/user/updateUser/1');
         sleep(0.5);
     });
 }

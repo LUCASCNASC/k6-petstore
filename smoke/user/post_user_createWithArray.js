@@ -8,7 +8,7 @@ export const options = {
 
 export default function(){
     group('requisição todos', function(){
-        const response1 = http.post('https://petstore.swagger.io/#/user/createUsersWithArrayInput');
+        const res = http.post('https://petstore.swagger.io/#/user/createUsersWithArrayInput');
         sleep(0.5);
     });
 }

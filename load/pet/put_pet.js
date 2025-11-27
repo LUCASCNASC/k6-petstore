@@ -19,6 +19,6 @@ export const options = {
 };
 
 export default function () {
-    http.put('https://petstore.swagger.io/#/pet/updatePet');
+    const res = http.put('https://petstore.swagger.io/#/pet/updatePet');
     sleep(1);
 }
