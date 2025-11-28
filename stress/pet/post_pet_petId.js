@@ -21,4 +21,7 @@ export const options = {
 export default function () {
     const res = http.post('https://petstore.swagger.io/#/pet/updatePetWithForm');
     sleep(1);
+    check(res, {
+        'status is 200': (r) => r.status === 200
+    });
 }

@@ -13,4 +13,7 @@ export const options = {
 export default function () {
     const res = http.put('https://petstore.swagger.io/#/pet/updatePet');
     sleep(1);
+    check(res, {
+        'status is 200': (r) => r.status === 200
+    });
 }

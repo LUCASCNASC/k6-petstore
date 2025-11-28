@@ -10,5 +10,8 @@ export default function(){
     group('requisição todos', function(){
         const res = http.put('https://petstore.swagger.io/#/user/updateUser');
         sleep(1);
+    check(res, {
+        'status is 200': (r) => r.status === 200
+    });
     });
 }

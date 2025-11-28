@@ -13,4 +13,7 @@ export const options = {
 export default function () {
     const res = http.del('https://petstore.swagger.io/#/store/deleteOrder');
     sleep(1);
+    check(res, {
+        'status is 200': (r) => r.status === 200
+    });
 }
