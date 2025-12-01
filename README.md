@@ -89,9 +89,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
 
-Seguir atualizando arquivos de teste.
-- smoke
-- load
-- breakpoint
-- soak
-- stress
+Documentando projeto.
