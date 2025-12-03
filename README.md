@@ -89,4 +89,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 *Feito por [Lucas Camargo](https://github.com/LUCASCNASC)*
 
-Documentando projeto.
+It is necessary to develop and specify the scenarios.
