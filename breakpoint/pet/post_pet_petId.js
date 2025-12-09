@@ -20,6 +20,9 @@ export const options = {
   }
 };
 
+let myCounter = new Counter('my_counter');  //custom metric
+let newsPageResponseTrend = new Trend('response_time_news_page');  //custom metric
+
 export default function () {
     const res = http.post('https://petstore.swagger.io/#/pet/updatePetWithForm');
     sleep(1);

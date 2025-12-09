@@ -16,7 +16,10 @@ export const options = {
     }
 }
 
-export default function(){
+let myCounter = new Counter('my_counter');  //custom metric
+let newsPageResponseTrend = new Trend('response_time_news_page');  //custom metric
+
+export default function (){
     group('requisição todos', function(){
         const res = http.del('https://petstore.swagger.io/#/store/deleteOrder');
         sleep(1);

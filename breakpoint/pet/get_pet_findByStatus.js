@@ -20,6 +20,9 @@ export const options = {
   }
 };
 
+let myCounter = new Counter('my_counter');  //custom metric
+let newsPageResponseTrend = new Trend('response_time_news_page');  //custom metric
+
 export default function () {
     const res = http.get('https://petstore.swagger.io/#/pet/findPetsByStatus');
     sleep(1);
