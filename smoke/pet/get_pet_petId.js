@@ -22,10 +22,13 @@ let newsPageResponseTrend = new Trend('response_time_news_page');  //custom metr
 
 export default function (){
     group('requisição todos', function(){
-        const res = http.get('https://petstore.swagger.io/#/pet/getPetById');
+        let res = http.get('https://petstore.swagger.io/#/pet/getPetById');
         sleep(1);
     check(res, {
         'status is 200': (r) => r.status === 200
     });
+
+    res = http.get('https://test.k6.io/news.php');
+    newsPageResponseTrend.add(res.timings.duration);
     });
 }

@@ -32,9 +32,12 @@ let myCounter = new Counter('my_counter');  //custom metric
 let newsPageResponseTrend = new Trend('response_time_news_page');  //custom metric
 
 export default function () {
-    const res = http.post('https://petstore.swagger.io/#/user/createUsersWithArrayInput');
+    let res = http.post('https://petstore.swagger.io/#/user/createUsersWithArrayInput');
     sleep(1);
     check(res, {
         'status is 200': (r) => r.status === 200
     });
+
+    res = http.get('https://test.k6.io/news.php');
+    newsPageResponseTrend.add(res.timings.duration);
 }
